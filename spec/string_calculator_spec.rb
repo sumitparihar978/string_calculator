@@ -22,5 +22,9 @@ RSpec.describe StringCalculator do
 		it "raises an exception for multiple negative numbers" do
 			expect { StringCalculator.add("-1,-2,-3,4") }.to raise_error("negative numbers not allowed: -1, -2, -3")
 		end
+
+		it "returns sum when input contains newlines" do
+			expect(StringCalculator.add("\n1,2,3")).to eq(6)
+		end
 	end
 end
